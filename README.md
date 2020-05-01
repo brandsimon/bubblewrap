@@ -42,6 +42,9 @@ The maintainers of this tool believe that it does not, even when used
 in combination with typical software installed on that distribution,
 allow privilege escalation.  It may increase the ability of a logged
 in user to perform denial of service attacks, however.
+Exceptions are software, which implement their own sandboxing
+(e.g. web-browsers). The functionality of these sandboxes can be
+restricted due to seccomp rules or missing files.
 
 In particular, bubblewrap uses `PR_SET_NO_NEW_PRIVS` to turn off
 setuid binaries, which is the [traditional way](https://en.wikipedia.org/wiki/Chroot#Limitations) to get out of things
